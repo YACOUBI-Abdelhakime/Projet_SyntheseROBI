@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+E:\U-B-O\L3-IFA_S6\P-Synthese\YACOUBI_Abdelhakime__PEYRE--NDIAYE_Fatou__AIT-AMEUR_Imene\.metadata\.plugins\org.eclipse.jdt.core
+3242790594.index
+3964316972.index
