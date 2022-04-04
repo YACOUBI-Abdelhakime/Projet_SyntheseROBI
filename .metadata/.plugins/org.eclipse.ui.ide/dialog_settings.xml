@@ -6,6 +6,10 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="E:\U-B-O\L3-IFA_S6\P-Synthese\Second_Partie\FTP_Client"/>
+			<item value="E:\U-B-O\L3-IFA_S6\P-Synthese\test\Projet_SyntheseROBI\SParser"/>
+			<item value="E:\U-B-O\L3-IFA_S6\P-Synthese\test\Projet_SyntheseROBI\Robi"/>
+			<item value="E:\U-B-O\L3-IFA_S6\P-Synthese\test\Projet_SyntheseROBI\2DGraphicCore"/>
 			<item value="E:\U-B-O\L3-IFA_S6\Project_JAVA_2D\Project_Synthése_Java_FX_Serveur"/>
 			<item value="E:\U-B-O\L3-IFA_S6\Project_JAVA_2D\Project_Synthése_Java_FX"/>
 			<item value="E:\U-B-O\L3-IFA_S6\Project_JAVA_2D\Robi2021_A_RENOMMER\SParser"/>

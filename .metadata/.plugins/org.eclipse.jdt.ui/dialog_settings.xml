@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item key="org.eclipse.jdt.ui.last.selected.jre.kind2" value="2"/>
+	<item key="org.eclipse.jdt.ui.last.selected.execution.enviroment" value="JavaSE-14"/>
+	<item key="org.eclipse.jdt.ui.last.external.project" value="E:\U-B-O\L3-IFA_S6\P-Synthese\Second_Partie\Robi_Client_Fx"/>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item key="group_libraries" value="true"/>
 		<item key="layout" value="2"/>
