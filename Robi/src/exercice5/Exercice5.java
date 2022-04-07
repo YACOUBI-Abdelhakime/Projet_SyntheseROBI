@@ -1,4 +1,4 @@
-package exercice4;
+package exercice5;
 
  import java.awt.Color;
 
@@ -38,33 +38,14 @@ import stree.parser.SParser;
 import tools.Tools;
 
 
-/*
-class NewElement implements Command {
-	public Reference run(Reference reference, SNode method) {
-		try {
-			@SuppressWarnings("unchecked")
-			GElement e = ((Class<GElement>) reference.getReceiver()).getDeclaredConstructor().newInstance();
-			Reference ref = new Reference(e);
-			ref.addCommand("setColor", new SetColor());
-			ref.addCommand("translate", new Translate());
-			ref.addCommand("setDim", new SetDim());
-			return ref;
-		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
-				| NoSuchMethodException | SecurityException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-}
-*/
 
-public class Exercice4_2_0 {
+public class Exercice5 {
 	// Une seule variable d'instance
 	Environment environment = new Environment();
 	//GSpace space = new GSpace("Exercice 4", new Dimension(200, 100));
 
-	public Exercice4_2_0() {
-		GSpace space = new GSpace("Exercice 4", new Dimension(200, 100));
+	public Exercice5() {
+		GSpace space = new GSpace("Exercice 4", new Dimension(400, 400));
 		space.open();
 
 		Reference spaceRef = new Reference(space);
@@ -90,7 +71,7 @@ public class Exercice4_2_0 {
 		environment.addReference("image.class", imageClassRef);
 		environment.addReference("label.class", stringClassRef);
 		
-		this.mainLoop();
+		//this.mainLoop();
 	}
 	
 	private void mainLoop() {
@@ -115,6 +96,25 @@ public class Exercice4_2_0 {
 				new Interpreter().compute(environment, itor.next());
 			}
 		}
+	}
+	public void oneShot(String scripts) {
+			
+			String input = scripts;
+			// creation du parser
+			SParser<SNode> parser = new SParser<>();
+			// compilation
+			List<SNode> compiled = null;
+			try {
+				compiled = parser.parse(input);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			// execution des s-expressions compilees
+			Iterator<SNode> itor = compiled.iterator();
+			while (itor.hasNext()) {
+				new Interpreter().compute(environment, itor.next());
+			}
 	}
 
 	public interface Command {
@@ -177,7 +177,7 @@ public class Exercice4_2_0 {
 			Reference ref = getReferenceByName(name);
 			ref.primitives.clear();			
 			variables.remove(name);
-			//System.out.println("removeObject ok");
+			System.out.println("removeObject ok");
 		}
 
 		Reference getReferenceByName(String name) {
@@ -257,6 +257,10 @@ public class Exercice4_2_0 {
 				ref.addCommand("setColor", new SetColor());
 				ref.addCommand("translate", new Translate());
 				ref.addCommand("setDim", new SetDim());
+				
+				ref.addCommand("add", new AddElement());
+				ref.addCommand("del", new DelElement());				
+				ref.addCommand("new", new NewElement());
 				return ref;
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -323,7 +327,7 @@ public class Exercice4_2_0 {
 			//System.out.println("******refNewElm******");
 			Reference refNewElm = new Interpreter().compute(environment, method.get(3));
 			
-			environment.addReference(method.get(2).contents().toString(), refNewElm);
+			environment.addReference(method.get(0).contents().toString()+"."+method.get(2).contents().toString(), refNewElm);
 			GElement obj = (GElement) refNewElm.getReceiver();
 			
 
@@ -363,7 +367,7 @@ public class Exercice4_2_0 {
 	
 	
 	public static void main(String[] args) {
-		new Exercice4_2_0();
+		new Exercice5();
 	}
 
 }
